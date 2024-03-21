@@ -10,3 +10,9 @@ POST/URL - generates a new short url ans returns the shortened url in the format
 GET/:ID - redirects the user to the original URL
 
 GET/URL/analytics/:id - returns the clicks for the provided short id.
+
+TECH USED :
+1 - Node JS
+2 - Express - for routing and middleware stuff 
+3 - Mongo DB - database
+4 - EJS - for server side rendering
