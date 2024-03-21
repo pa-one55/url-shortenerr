@@ -12,11 +12,10 @@ const urlSchema = new mongoose.Schema(
             type : String,
             required : true,
         },
-        visitHistory: [ // array hai ye - array of objects
-            {
-                timeStamp : { type : Number }
-            }
-        ],
+        visits: {
+            type : Number,
+            require : true,
+        },
     }, 
     {timeStamp : true}
 );

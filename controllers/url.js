@@ -15,7 +15,7 @@ async function handleGenerateNewShortUrl(req,res){
     await URL.create({
         shortId: shortIdGenerated,
         originalUrl: body.url,
-        visitHistory: [],
+        visits: 0,
     });
     return res.json({ 
         yourLongUrl : body.url,

@@ -16,3 +16,4 @@ TECH USED :
 2 - Express - for routing and middleware stuff 
 3 - Mongo DB - database
 4 - EJS - for server side rendering
+5 - Postman - for API requests
