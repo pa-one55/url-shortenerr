@@ -44,6 +44,31 @@ app.get("/:shortId", async (req, res) => {
     // so append "https://www." before "originalId" if "https://" does not already exists - above
   });
 
+
+
+
+app.get("/url/analytics/:shortId", async (req, res) => {
+    console.log("new analytics req at ", Date.now(), "method : ", req.method);
+    const shortId = req.params.shortId;
+    console.log("Short ID : ", shortId);
+    const entry = await URL.findOne({
+      shortId : shortId,
+    });
+    
+    if (!entry) {
+      console.log("entry not found");
+      return res.status(404).json({ error: "no such short id exists" });
+    }
+    
+    console.log(entry);
+    const visits = entry.visits;
+    return res.status(200).json({redirectURL : entry.originalUrl, totalVisits : visits}); 
+  });
+
+
+
+
+
 app.listen(PORT, () => {
     console.log("Server Listening At Port : ", PORT);
 });
